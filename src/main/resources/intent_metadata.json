@@ -1,0 +1,10 @@
+[
+  {
+    "name": "AMAZON.HelpIntent",
+    "response": "You can control your lights. Say Lights on to turn on the light and lights off to turn off the light"
+  },
+  {
+    "name": "AMAZON.CancelIntent",
+    "response": "Thank you for using the skill"
+  }
+]
