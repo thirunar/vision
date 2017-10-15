@@ -13,7 +13,6 @@ import org.springframework.core.io.ResourceLoader;
 import org.springframework.stereotype.Component;
 
 import javax.annotation.PostConstruct;
-import java.io.FileInputStream;
 
 @Component
 public class FirebaseConfig {
@@ -28,10 +27,8 @@ public class FirebaseConfig {
     public void initializeFirebase() throws Exception {
         Resource resource = resourceLoader.getResource("classpath:/firebase_credentials.json");
 
-        FileInputStream inputStream = new FileInputStream(resource.getFile());
-
         FirebaseOptions options = new FirebaseOptions.Builder()
-                .setCredentials(GoogleCredentials.fromStream(inputStream))
+                .setCredentials(GoogleCredentials.fromStream(resource.getInputStream()))
                 .setDatabaseUrl(configuration.getProperty("firebase.database.url"))
                 .build();
         FirebaseApp.initializeApp(options);

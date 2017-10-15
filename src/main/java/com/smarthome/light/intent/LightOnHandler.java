@@ -17,7 +17,7 @@ import org.springframework.stereotype.Component;
 @Component
 public class LightOnHandler implements IntentHandler {
 
-    private static final String INTENT_NAME = "LightOn";
+    private static final String INTENT_NAME = "LightsOn";
 
     private static final Logger LOGGER = LoggerFactory.getLogger(LightOnHandler.class);
 
